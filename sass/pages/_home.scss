@@ -1,0 +1,167 @@
+.resume{
+    position: relative;
+    display: block;
+    max-width: 65rem;
+    height: 100%;
+    background-color: inherit;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+
+    &__cover{
+        
+        width: 100%;
+        max-width: $resume-cover-width;
+        height: $resume-page-height;
+        position: absolute;
+        background-color: $color-cover-front-outline;
+        &--front{
+            clip-path: polygon(100% $resume-tab-depth, 100% 100%, 0 100%, 0 $resume-tab-depth);
+            z-index: 60;
+            left: 0;
+            transform: translateY(calcTransY(0) * 1rem);
+            &::before{
+                width: 100%;
+                transform: scaleX(0.98) translateY(.5rem);;
+                z-index: 61;
+                background-color: $color-cover-front;
+                content: "";
+                display: inline-block;
+                position: absolute;
+                clip-path: polygon(100% $resume-tab-depth, 100% 100%, 0 100%, 0 $resume-tab-depth);
+                // width: calc(#{$resume-cover-height} * #{$resume-border-handler});
+                // height: calc(#{$resume-page-height} * #{$resume-border-handler});
+                max-width: $resume-cover-width;
+                height: $resume-page-height;
+            }
+        }
+        &--back{
+            clip-path: polygon(100% $resume-tab-depth, 100% 90%, 99.5% 94%, 99% 95%, 98% 98%, 97% 100%, 0 100%, 0 $resume-tab-depth);
+            background-color: $color-cover-back-2;
+            z-index: 0;
+            right: 0rem;
+            transform: translateY(calcTransY(0.8) * 1rem);
+            height: calc(#{$resume-page-height} + 0.5rem);
+            box-shadow: 10px 2px 2px rgba($color-black, 0.4);
+        }
+    }
+
+    &__tab{
+        border-radius: 0 0 3px 3px;
+        // left: $resume-tab-left;
+        width: 90%;
+        position: absolute;
+        height: $resume-page-height;
+        // box-shadow: 10px 10px 10px rgba($color-black, 0.4);
+
+        &--summary{
+            left: calcTabLeft($resume-index-summary) * 1rem;
+            background-color: $color-tan-light;
+            z-index: 50;
+            transform: translateY(calcTransY(1.6) * 1rem);
+            @include create-clip-path($resume-index-summary);
+            // clip-path: polygon(20% $resume-tab-depth, 100% $resume-tab-depth, 100% 100%, 0 100%, 0 0, 20% 0);
+        }
+        &--info{
+            left: calcTabLeft($resume-index-info) * 1rem;
+            background-color: $color-tan-dark;
+            z-index: 40;
+            transform: translateY(calcTransY(1.7) * 1rem);
+            @include create-clip-path($resume-index-info);
+            // clip-path: polygon(20% 0, 40% 0, 40% $resume-tab-depth, 100% $resume-tab-depth, 100% 100%, 0 100%, 0 $resume-tab-depth, 20% $resume-tab-depth);
+        }
+        &--education{
+            left: calcTabLeft($resume-index-education) * 1rem;
+            background-color: $color-red-light;
+            z-index: 30;
+            transform: translateY(calcTransY(1.8) * 1rem);
+            @include create-clip-path($resume-index-education);
+            // clip-path: polygon(40% 0, 60% 0, 60% $resume-tab-depth, 100% $resume-tab-depth, 100% 100%, 0 100%, 0 $resume-tab-depth, 40% $resume-tab-depth);
+        }
+        &--skills-and-interests{
+            left: calcTabLeft($resume-index-skills-and-interests) * 1rem;
+            background-color: $color-blue-light;
+            z-index: 20;
+            transform: translateY(calcTransY(1.9) * 1rem);
+            @include create-clip-path($resume-index-skills-and-interests);
+            // clip-path: polygon(60% 0, 80% 0, 80% $resume-tab-depth, 100% $resume-tab-depth, 100% 100%, 0 100%, 0 $resume-tab-depth, 60% $resume-tab-depth);
+        }
+        &--experience{
+            left: calcTabLeft($resume-index-experience) * 1rem;
+            background-color: $color-blue-dark;
+            z-index: 10;
+            transform: translateY(calcTransY(2) * 1rem);
+            @include create-clip-path($resume-index-experience);
+
+        }
+        transition: all 0.5s ease-out;
+        &:hover{
+            transform: translateY($anim-hover);
+        }
+        &:hover &__title{
+            transform: skewZ(-10deg) scale(1.05);
+            box-shadow: 10px 5px 5px rgba($color-black, 0.4);
+            border: 1px solid $color-black;
+        }
+
+        &__title{
+            // text-decoration: none;
+            // color: $color-black;
+            // font-size: $font-tab-title;
+            cursor: pointer;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.5s ease-out;
+            position: absolute;
+            display: inline-block;
+            transform: translateX(-50%);
+            top:  0;
+            width: calc(100% / #{$resume-tabs-total});
+            text-align: center;
+            padding: .5rem 0;
+            &--summary{
+                @include set-tab-indent($resume-index-summary);
+            }
+            &--info{
+                @include set-tab-indent($resume-index-info);
+            }
+            &--education{
+                @include set-tab-indent($resume-index-education);
+            }
+            &--skills-and-interests{
+                @include set-tab-indent($resume-index-skills-and-interests);
+            }
+            &--experience{
+                @include set-tab-indent($resume-index-experience);
+            }
+            
+        }
+
+        //  checkbox/Buttons
+        &__checkbox{
+            // display: none;
+            transition: all 1s ease;
+        }
+        &__button{
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+        }
+        &__checkbox:checked &{
+            transform: translateY(-$anim-click);
+        }
+
+    }
+
+    // &__tab__checkbox:checked &__tab{
+    //     transform: translateY($anim-hover);
+    // }
+
+
+
+
+
+
+    
+    
+}

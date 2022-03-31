@@ -1,0 +1,25 @@
+.header{
+    border-bottom: 2px solid $color-grey;
+    height: 4vh;
+    width: 100%;
+    position: relative;
+    margin-bottom: 5rem;
+
+    &__title{
+        display: block;
+        margin: auto;
+        width: 90%;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    &__settings{
+        display: inline-block;
+        
+        height: 3rem;
+        width: 3rem;
+        background-color: orangered;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}

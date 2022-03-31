@@ -1,0 +1,53 @@
+// ClearFix for floats
+// Append a pseudo element, after the element to clear floats
+@mixin clearfix{
+    &::after{
+        // need to specify or psuedo will not appear
+        content: "";
+        // standard clear fix 
+        display: table;
+        // clear float left/right
+        clear: both;
+    }
+}
+
+@mixin select-summary{
+    
+}
+// create clip path based on i index
+@mixin create-clip-path($i){
+    // first tab
+    @if $i == 0{
+        clip-path: polygon(ratio(1,$resume-tabs-total) $resume-tab-depth, 100% $resume-tab-depth, 100% 100%, 0 100%, 0 0, ratio(1,$resume-tabs-total) 0);
+    }
+    // last tab
+    @else if $i == sub($resume-tabs-total,1){
+        clip-path: polygon(ratio(sub($resume-tabs-total,1),$resume-tabs-total) $resume-tab-depth, ratio(sub($resume-tabs-total,1),$resume-tabs-total) 0, 100% 0, 100% 100%, 0 100%, 0 $resume-tab-depth);
+    }@else{
+        clip-path: polygon(ratio($i,$resume-tabs-total) 0, add(ratio($i,$resume-tabs-total),ratio(1,$resume-tabs-total)) 0, add(ratio($i,$resume-tabs-total),ratio(1,$resume-tabs-total)) $resume-tab-depth, 100% $resume-tab-depth, 100% 100%, 0 100%, 0 $resume-tab-depth, ratio($i,$resume-tabs-total) $resume-tab-depth);
+    }
+    
+}
+
+@mixin set-tab-indent($i){
+    // left: calc(( ( (#{$i} * (#{$resume-tab-length} / 2)) + #{$resume-tabs-total}) + (#{$i} * #{calcTabLeft($i)} )) * 1rem);
+    // left: calc( (  ratio((#{$resume-tab-length} / 2),100)  + (divide((#{$resume-tab-length} / 2),100) * #{$i} ) + #{calcTabLeft($i)} ) * 1rem );
+    left: calc( (((#{$resume-tab-length} * (#{$i} + 0.5)) * 1%)) );
+}
+
+// @mixin hover-animation($i){
+//     $m: $resume-tabs-total/2;
+//     @if isOdd($i){
+//         $m: calc((#{$resume-tabs-total} - 1) / 2);
+//     }
+//     // in the middle
+//     @if $i == $m{
+
+//     }@else if ($i < m){
+//         // left side
+
+//     }@else{
+//         // right
+//     }
+
+// }

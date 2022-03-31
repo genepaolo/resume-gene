@@ -1,0 +1,47 @@
+// https://coolors.co/palette/0081a7-00afb9-fdfcdc-fed9b7-f07167
+
+// Color Palettes
+
+$color-black: #2b2d42;
+$color-grey: #8d99ae;
+$color-white: #edf2f4;
+
+$color-blue-dark: #0081a7;
+$color-blue-light: #00afb9;
+
+$color-tan-light: #fdfcdc;
+$color-tan-dark: #fed9b7;
+
+$color-red-light: #f07167;
+
+$color-cover-front: #f3d9c0;
+$color-cover-front-outline: #ffc39af3;
+$color-cover-back: #a87c52;
+$color-cover-back-2: #dba16b;
+
+// Indicies
+$resume-index-summary: 0;
+$resume-index-info: 1;
+$resume-index-education: 2;
+$resume-index-skills-and-interests: 3;
+$resume-index-experience: 4;
+$resume-tabs-total: 5;
+
+// Resume components
+
+$resume-page-height: 40vh;
+$resume-cover-width: 63rem;
+// how much we want to scale our ::before pseudo elems to make borders
+$resume-border-handler: 0.99;
+$resume-tab-left: 2;
+$resume-tab-depth: 8%;
+$resume-tab-length: calc(100/#{$resume-tabs-total});
+$resume-transy: 32;
+// Resume text
+
+// Animation values
+$anim-hover: 29rem;
+$anim-click: 15rem;
+
+// Font sizes
+$font-tab-title: 1rem;
