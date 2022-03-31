@@ -4,6 +4,7 @@
     width: 100%;
     position: relative;
     margin-bottom: 5rem;
+    background-color: inherit;
 
     &__title{
         display: block;
@@ -13,13 +14,21 @@
         text-transform: uppercase;
     }
     &__settings{
-        display: inline-block;
+        &__button{
+            display: inline-block;
+            height: 3rem;
+            width: 3rem;
+            background-color: orangered;
+            position: absolute;
+            right: 0;
+            top: 0;
+            text-decoration: none;
+            cursor: pointer;
+        }
         
-        height: 3rem;
-        width: 3rem;
-        background-color: orangered;
-        position: absolute;
-        right: 0;
-        top: 0;
+        &__checkbox{
+            display: none;
+        }
+
     }
 }

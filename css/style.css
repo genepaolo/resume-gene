@@ -9,7 +9,7 @@ html {
 body {
   box-sizing: border-box;
   background-color: #edf2f4;
-  padding: .5rem 2rem; }
+  padding: .5rem .5rem; }
 
 body {
   /* put font properties in body bc properties are inherited  */
@@ -24,26 +24,76 @@ body {
   font-size: 2rem;
   font-weight: 700; }
 
+.modal-settings {
+  display: none;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 20vh;
+  left: 0;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.5s ease-out;
+  background-color: inherit; }
+  .modal-settings__content {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 50rem;
+    height: 100%; }
+    .modal-settings__content__list {
+      list-style: none;
+      padding: 2rem; }
+      .modal-settings__content__list::after {
+        content: "";
+        display: table;
+        clear: both; }
+      .modal-settings__content__list__item::after {
+        content: "";
+        display: table;
+        clear: both; }
+  .modal-settings-item {
+    width: 100%; }
+    .modal-settings-item-text {
+      float: left;
+      text-transform: uppercase;
+      font-size: 1.6rem;
+      font-weight: 400; }
+    .modal-settings-item-button {
+      float: right; }
+
+.header__settings__checkbox:checked + .modal-settings {
+  display: inline-block;
+  opacity: 1;
+  transform: translateY(-20vh);
+  z-index: 1000; }
+
 .header {
   border-bottom: 2px solid #8d99ae;
   height: 4vh;
   width: 100%;
   position: relative;
-  margin-bottom: 5rem; }
+  margin-bottom: 5rem;
+  background-color: inherit; }
   .header__title {
     display: block;
     margin: auto;
     width: 90%;
     text-align: center;
     text-transform: uppercase; }
-  .header__settings {
+  .header__settings__button {
     display: inline-block;
     height: 3rem;
     width: 3rem;
     background-color: orangered;
     position: absolute;
     right: 0;
-    top: 0; }
+    top: 0;
+    text-decoration: none;
+    cursor: pointer; }
+  .header__settings__checkbox {
+    display: none; }
 
 .section-resume {
   width: 100%;
@@ -153,10 +203,11 @@ body {
       .resume__tab__title--experience {
         left: calc( (((calc(100/5) * (4 + 0.5)) * 1%))); }
     .resume__tab__checkbox {
+      display: none;
       transition: all 1s ease; }
     .resume__tab__button {
       width: 100%;
       height: 100%;
       display: inline-block; }
-    .resume__tab__checkbox:checked .resume__tab {
-      transform: translateY(-15rem); }
+    .resume__tab__checkbox:checked + .resume__tab {
+      transform: translateY(1rem); }

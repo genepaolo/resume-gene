@@ -1,0 +1,51 @@
+.modal-settings{
+    display: none;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 20vh;
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.5s ease-out;
+    background-color: inherit;
+    &__content{
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 50rem;
+        height: 100%;
+        &__list{
+            list-style: none;
+            padding: 2rem;
+            @include clearfix();
+            &__item{
+                @include clearfix();
+            }
+        }
+    }
+    &-item{
+        width: 100%;
+        &-text{
+            float: left;
+            text-transform: uppercase;
+            font-size: $font-settings-text;
+            font-weight: 400;
+        }
+        &-button{
+            float: right;
+        }
+    }
+}
+
+.header{
+    &__settings{
+        &__checkbox:checked + .modal-settings{
+            display: inline-block;
+            opacity: 1;
+            transform: translateY(-20vh);
+            z-index: 1000;
+        }
+    }
+}

@@ -139,7 +139,7 @@
 
         //  checkbox/Buttons
         &__checkbox{
-            // display: none;
+            display: none;
             transition: all 1s ease;
         }
         &__button{
@@ -147,7 +147,7 @@
             height: 100%;
             display: inline-block;
         }
-        &__checkbox:checked &{
+        &__checkbox:checked + &{
             transform: translateY(-$anim-click);
         }
 
