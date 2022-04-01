@@ -7,6 +7,41 @@
     width: 100%;
     margin: 0 auto;
     overflow: hidden;
+    color: $color-black;
+    z-index: 3;
+
+    &__tab__checkbox:checked ~ &__shadow--anim{
+        transform: translateX(calc(#{$resume-tab-left}*1rem)) translateY(-$anim-shadow);
+    }
+    &__shadow--anim{
+        transition: all 0.5s ease-out;
+        box-shadow: 7.2rem 1rem 1rem rgba($color-black, 0.4);
+        width: 100%;
+        max-width: 55rem;
+        position: absolute;
+        height: calc(#{$resume-page-height} - 1vh);
+        bottom: 2.1rem;
+        display: inline-block;
+        z-index: 2;
+        
+    }
+
+    &__shadow{
+        box-shadow: 3rem 3rem 3rem rgba($color-black, 0.4);
+        width: 100%;
+        max-width: 63rem;
+        position: absolute;
+        height: $resume-page-height;
+        bottom: 11.3rem;
+        left: 50%;
+        background-color: transparent;
+        display: inline-block;
+        z-index: 2;
+        transform: translateX(-51%);
+        
+    }
+    
+
 
     &__cover{
         
@@ -38,7 +73,7 @@
         &--back{
             clip-path: polygon(100% $resume-tab-depth, 100% 90%, 99.5% 94%, 99% 95%, 98% 98%, 97% 100%, 0 100%, 0 $resume-tab-depth);
             background-color: $color-cover-back-2;
-            z-index: 0;
+            z-index: 9;
             right: 0rem;
             transform: translateY(calcTransY(0.8) * 1rem);
             height: calc(#{$resume-page-height} + 0.5rem);

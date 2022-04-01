@@ -18,9 +18,9 @@
         height: 100%;
         &__list{
             list-style: none;
-            padding: 2rem;
             @include clearfix();
             &__item{
+                padding: 2rem 0;
                 @include clearfix();
             }
         }
