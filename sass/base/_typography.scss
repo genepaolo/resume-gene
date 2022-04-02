@@ -20,7 +20,17 @@ body{
 .resume{
     &__tab{
         &__title{
-            
+            text-decoration: none;
+            color: $color-black;
+            font-size: $font-tab-title;
         }
     }
+}
+
+.font-bold{
+    font-weight:700;
+}
+
+.font-shrink{
+    font-size: 1.2rem;
 }

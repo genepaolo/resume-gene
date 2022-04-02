@@ -38,6 +38,17 @@ body {
   font-size: 2rem;
   font-weight: 700; }
 
+.resume__tab__title {
+  text-decoration: none;
+  color: #2b2d42;
+  font-size: 1.5rem; }
+
+.font-bold {
+  font-weight: 700; }
+
+.font-shrink {
+  font-size: 1.2rem; }
+
 .modal-settings {
   display: none;
   position: absolute;
@@ -144,6 +155,30 @@ input:checked ~ .body {
   background-color: #2b2d42;
   color: #edf2f4; }
 
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 0.5rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 0.5rem; }
+  .row .col-1-of-2, .row .col-2-of-4 {
+    width: calc((100% - 0.5rem)/2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 0.5rem*2)/3); }
+  .row .col-2-of-3 {
+    width: calc(100% - 0.5rem - ((100% - 0.5rem*2)/3)); }
+  .row .col-1-of-4 {
+    width: calc((100% - 0.5rem*3)/4); }
+  .row .col-3-of-4 {
+    width: calc((100% - 0.5rem - ((100% - 0.5rem*3)/4))); }
+
 .header {
   border-bottom: 2px solid #8d99ae;
   height: 4vh;
@@ -187,15 +222,15 @@ input:checked ~ .body {
   color: #2b2d42;
   z-index: 3; }
   .resume__tab__checkbox:checked ~ .resume__shadow--anim {
-    transform: translateX(calc(2*1rem)) translateY(-29rem); }
+    transform: translateX(calc(1*1rem)) translateY(-29rem); }
   .resume__shadow--anim {
     transition: all 0.5s ease-out;
     box-shadow: 7.2rem 1rem 1rem rgba(43, 45, 66, 0.4);
     width: 100%;
     max-width: 55rem;
     position: absolute;
-    height: calc(40vh - 1vh);
-    bottom: 2.1rem;
+    height: calc(40vh - 3.5vh);
+    bottom: 3.5rem;
     display: inline-block;
     z-index: 2; }
   .resume__shadow {
@@ -235,7 +270,7 @@ input:checked ~ .body {
     .resume__cover--back {
       clip-path: polygon(100% 8%, 100% 90%, 99.5% 94%, 99% 95%, 98% 98%, 97% 100%, 0 100%, 0 8%);
       background-color: #dba16b;
-      z-index: 9;
+      z-index: 7;
       right: 0rem;
       transform: translateY(31.2rem);
       height: calc(40vh + 0.5rem);
@@ -246,36 +281,42 @@ input:checked ~ .body {
     position: absolute;
     height: 40vh;
     transition: all 0.5s ease-out; }
-    .resume__tab--summary {
-      left: 2rem;
+    .resume__tab--about {
+      left: 1rem;
       background-color: #fdfcdc;
       z-index: 50;
       transform: translateY(30.4rem);
-      clip-path: polygon(20% 8%, 100% 8%, 100% 100%, 0 100%, 0 0, 20% 0); }
-    .resume__tab--info {
-      left: 3rem;
+      clip-path: polygon(16.66667% 8%, 100% 8%, 100% 100%, 0 100%, 0 0, 16.66667% 0); }
+    .resume__tab--profile {
+      left: 2rem;
       background-color: #fed9b7;
       z-index: 40;
       transform: translateY(30.3rem);
-      clip-path: polygon(20% 0, 40% 0, 40% 8%, 100% 8%, 100% 100%, 0 100%, 0 8%, 20% 8%); }
+      clip-path: polygon(16.66667% 0, 33.33333% 0, 33.33333% 8%, 100% 8%, 100% 100%, 0 100%, 0 8%, 16.66667% 8%); }
     .resume__tab--education {
-      left: 4rem;
+      left: 3rem;
       background-color: #f07167;
       z-index: 30;
       transform: translateY(30.2rem);
-      clip-path: polygon(40% 0, 60% 0, 60% 8%, 100% 8%, 100% 100%, 0 100%, 0 8%, 40% 8%); }
+      clip-path: polygon(33.33333% 0, 50% 0, 50% 8%, 100% 8%, 100% 100%, 0 100%, 0 8%, 33.33333% 8%); }
     .resume__tab--skills-and-interests {
-      left: 5rem;
+      left: 4rem;
       background-color: #00afb9;
       z-index: 20;
       transform: translateY(30.1rem);
-      clip-path: polygon(60% 0, 80% 0, 80% 8%, 100% 8%, 100% 100%, 0 100%, 0 8%, 60% 8%); }
+      clip-path: polygon(50% 0, 66.66667% 0, 66.66667% 8%, 100% 8%, 100% 100%, 0 100%, 0 8%, 50% 8%); }
     .resume__tab--experience {
-      left: 6rem;
+      left: 5rem;
       background-color: #0081a7;
       z-index: 10;
       transform: translateY(30rem);
-      clip-path: polygon(80% 8%, 80% 0, 100% 0, 100% 100%, 0 100%, 0 8%); }
+      clip-path: polygon(66.66667% 0, 83.33333% 0, 83.33333% 8%, 100% 8%, 100% 100%, 0 100%, 0 8%, 66.66667% 8%); }
+    .resume__tab--projects {
+      left: 6rem;
+      background-color: #2a9d8f;
+      z-index: 9;
+      transform: translateY(30rem);
+      clip-path: polygon(83.33333% 8%, 83.33333% 0, 100% 0, 100% 100%, 0 100%, 0 8%); }
     .resume__tab:hover {
       transform: translateY(29rem); }
     .resume__tab:hover .resume__tab__title {
@@ -291,25 +332,78 @@ input:checked ~ .body {
       display: inline-block;
       transform: translateX(-50%);
       top: 0;
-      width: calc(100% / 5);
+      width: calc(100% / 6);
       text-align: center;
       padding: .5rem 0; }
-      .resume__tab__title--summary {
-        left: calc( (((calc(100/5) * (0 + 0.5)) * 1%))); }
-      .resume__tab__title--info {
-        left: calc( (((calc(100/5) * (1 + 0.5)) * 1%))); }
+      .resume__tab__title--about {
+        left: calc( (((calc(100/6) * (0 + 0.5)) * 1%))); }
+      .resume__tab__title--profile {
+        left: calc( (((calc(100/6) * (1 + 0.5)) * 1%))); }
       .resume__tab__title--education {
-        left: calc( (((calc(100/5) * (2 + 0.5)) * 1%))); }
+        left: calc( (((calc(100/6) * (2 + 0.5)) * 1%))); }
       .resume__tab__title--skills-and-interests {
-        left: calc( (((calc(100/5) * (3 + 0.5)) * 1%))); }
+        left: calc( (((calc(100/6) * (3 + 0.5)) * 1%))); }
       .resume__tab__title--experience {
-        left: calc( (((calc(100/5) * (4 + 0.5)) * 1%))); }
+        left: calc( (((calc(100/6) * (4 + 0.5)) * 1%))); }
+      .resume__tab__title--projects {
+        left: calc( (((calc(100/6) * (5 + 0.5)) * 1%))); }
     .resume__tab__checkbox {
       display: none;
       transition: all 1s ease; }
     .resume__tab__button {
       width: 100%;
       height: 100%;
-      display: inline-block; }
+      display: inline-block;
+      overflow-x: hidden; }
     .resume__tab__checkbox:checked + .resume__tab {
       transform: translateY(1rem); }
+    .resume__tab__slide {
+      width: 100%;
+      height: 100%;
+      display: inline-block; }
+    .resume__tab__scroll {
+      position: absolute;
+      top: 0rem;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 5rem;
+      width: 10rem;
+      background-color: orangered;
+      z-index: -1;
+      opacity: 0;
+      transition: all 0.5s ease;
+      transition-delay: 0.5s; }
+    .resume__tab__checkbox:checked + .resume__tab > .resume__tab__scroll {
+      z-index: 1000;
+      opacity: 1; }
+    .resume__tab__checkbox--slider--experience:checked + .resume__tab__file--1 {
+      transform: translateY(-15rem);
+      opacity: 0;
+      transition-delay: 0s; }
+    .resume__tab__checkbox--slider--experience:checked ~ .resume__tab__file--2 {
+      transition-delay: 0.5s;
+      transform: translateY(0);
+      opacity: 1; }
+    .resume__tab__file {
+      position: absolute;
+      display: inline-block;
+      top: 0;
+      left: 0;
+      margin: 2rem 1rem;
+      height: 100%;
+      transition: all 1s ease-out; }
+      .resume__tab__file__heading {
+        text-align: left;
+        padding-top: 3rem;
+        padding-bottom: 1rem;
+        font-size: 2.5rem; }
+      .resume__tab__file__content__p {
+        font-size: 1.6rem;
+        line-height: 1.8rem;
+        padding-bottom: 1rem;
+        font-weight: 100; }
+      .resume__tab__file--1 {
+        transition-delay: 0.5s; }
+      .resume__tab__file--2 {
+        opacity: 0;
+        transform: translateY(15rem); }

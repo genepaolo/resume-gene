@@ -19,13 +19,16 @@ $color-cover-front-outline: #ffc39af3;
 $color-cover-back: #a87c52;
 $color-cover-back-2: #dba16b;
 
+$color-green: #2a9d8f;
+
 // Indicies
-$resume-index-summary: 0;
-$resume-index-info: 1;
+$resume-index-about: 0;
+$resume-index-profile: 1;
 $resume-index-education: 2;
 $resume-index-skills-and-interests: 3;
 $resume-index-experience: 4;
-$resume-tabs-total: 5;
+$resume-index-projects: 5;
+$resume-tabs-total: 6;
 
 // Resume components
 
@@ -33,7 +36,7 @@ $resume-page-height: 40vh;
 $resume-cover-width: 63rem;
 // how much we want to scale our ::before pseudo elems to make borders
 $resume-border-handler: 0.99;
-$resume-tab-left: 2;
+$resume-tab-left: 1;
 $resume-tab-depth: 8%;
 $resume-tab-length: calc(100/#{$resume-tabs-total});
 $resume-transy: 32;
@@ -44,5 +47,11 @@ $anim-hover: 29rem;
 $anim-click: -1rem;
 $anim-shadow: 29rem;
 // Font sizes
-$font-tab-title: 1rem;
+$font-tab-title: 1.5rem;
 $font-settings-text: 1.6rem;
+$font-file-heading: 2.5rem;
+$font-file-content: 1.6rem;
+// grids
+$grid-width: 114rem;
+$gutter-vertical: .5rem;
+$gutter-horizontal: .5rem;

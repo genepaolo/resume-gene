@@ -1,0 +1,57 @@
+.grid{
+
+}
+
+// need to define a width
+.row{
+    // width: 1140px;
+    // width: 114rem;
+    // max-width: if viewport is smaller than 114rem, then it will fill 100% of the available space
+    // width: if viewport is smaller, it will still extend past available space and keep width off screen 
+    max-width: $grid-width;
+    margin: 0 auto;
+    
+    // &:last-child would select the last child and we could set margin to 0
+    // &:not(:last-child) selects everything except the last one, so we dont manually set one row to 0
+    &:not(:last-child) {
+        margin-bottom: $gutter-vertical;
+    }
+
+    // floats cleared and we have our height back != 0
+    @include clearfix;
+
+    // attribute selector, easier than making a new col class
+    // select all the attributes which class starts with (^) col-
+    [class^="col-"] {
+        // all children are floated which made the height of row = 0px, need to clear fix
+        float: left;
+        // this is grouped around columns within a row, does not affect col-1-of-2 of different rows
+        &:not(:last-child){
+            margin-right: $gutter-horizontal;
+        }
+    }
+    // [class^="col-"] - start with col-
+    // [class*="col-"] - contain col-
+
+    .col-1-of-2, .col-2-of-4{
+        // we can mix units with sass calc
+        // calculation occurs during rendering bc it depends on layout values
+        // using variables in calc requires #{}
+        width: calc((100% - #{$gutter-horizontal})/2);
+    }
+    
+    .col-1-of-3{
+        width: calc((100% - #{$gutter-horizontal}*2)/3);
+    }
+    .col-2-of-3{
+        // subtract 1 col of 3 and gutter-horiz
+        width: calc(100% - #{$gutter-horizontal} - ((100% - #{$gutter-horizontal}*2)/3)) ;
+    }
+    .col-1-of-4{
+        width: calc((100% - #{$gutter-horizontal}*3)/4);
+    }
+    .col-3-of-4{
+        width: calc((100% - #{$gutter-horizontal} - ((100% - #{$gutter-horizontal}*3)/4)));
+    }
+    
+}
