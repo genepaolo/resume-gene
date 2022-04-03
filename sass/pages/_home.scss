@@ -10,33 +10,35 @@
     z-index: 3;
 
     &__tab__checkbox:checked ~ &__shadow--anim{
-        transform: translateX(calc(#{$resume-tab-left}*1rem)) translateY(-$anim-shadow);
+        transform: translateY(5rem);
     }
     &__shadow--anim{
         transition: all 0.5s ease-out;
-        box-shadow: 7.2rem 1rem 1rem rgba($color-black, 0.4);
-        width: 85%;
+        box-shadow: 7rem 1rem 1rem rgba($color-black, 0.4), -3rem -3rem .3rem rgba($color-black, 0.4) inset;
+        width: 80%;
         max-width: 55rem;
         position: absolute;
-        height: calc(#{$resume-page-height} - 3.5vh);
-        bottom: 3rem;
+        height: $resume-page-height - 10vh;
         display: inline-block;
         z-index: 2;
+        transform:translateY(calcTransY(-5) * 1rem);
+        mix-blend-mode: exclusion;
+        left: 5rem;
         
     }
 
     &__shadow{
-        box-shadow: 3rem 3rem 3rem rgba($color-black, 0.4);
+        box-shadow: 1rem 1rem 1rem rgba($color-black, 0.4);
         width: 100%;
         max-width: 63rem;
         position: absolute;
         height: $resume-page-height;
-        bottom: 11.3rem;
+        // bottom: 11rem;
         left: 50%;
         background-color: transparent;
         display: inline-block;
         z-index: 2;
-        transform: translateX(-51%);
+        transform: translateX(-51%) translateY(calcTransY(.5) * 1rem);
         
     }
     
@@ -49,7 +51,38 @@
         height: $resume-page-height;
         position: absolute;
         background-color: $color-cover-front-outline;
+        &__title{
+            z-index: 62;
+            color: rgba($color-red-light-2, 0.8);
+            font-size: 3rem;
+            position: absolute;
+            top: 5rem;
+            left: 2rem;
+            transform: rotate(-15deg);
+            display: inline-block;
+            width: 10rem;
+            height: 5rem;
+            text-transform: uppercase;
+            line-height: 3rem;
+        }
+        &__name{
+            margin: auto;
+            z-index: 62;
+            font-size: 2rem;
+            position: absolute;
+            text-align: center;
+            top: 14%;
+            right: 3%;
+            display: inline-block;
+            width: 15rem;
+            height: 5rem;
+            line-height: 5rem;
+            background-color: $color-white;
+            text-transform: uppercase;
+            box-shadow: .3rem .3rem .3rem rgba($color-black, 0.2);
+        }
         &--front{
+            
             clip-path: polygon(100% $resume-tab-depth, 100% 100%, 0 100%, 0 $resume-tab-depth);
             z-index: 60;
             left: 0;
@@ -58,7 +91,8 @@
                 width: 100%;
                 transform: scaleX(0.98) translateY(.5rem);;
                 z-index: 61;
-                background-color: $color-cover-front;
+                // background-color: $color-cover-front;
+                background: linear-gradient(to bottom right, $color-cover-front, $color-cover-front-2);
                 content: "";
                 display: inline-block;
                 position: absolute;
@@ -67,7 +101,10 @@
                 // height: calc(#{$resume-page-height} * #{$resume-border-handler});
                 max-width: $resume-cover-width;
                 height: $resume-page-height;
+                
             }
+
+            
         }
         &--back{
             clip-path: polygon(100% $resume-tab-depth, 100% 90%, 99.5% 94%, 99% 95%, 98% 98%, 97% 100%, 0 100%, 0 $resume-tab-depth);
@@ -81,6 +118,7 @@
     }
 
     &__tab{
+        overflow-y:auto;
         cursor: pointer;
         border-radius: 0 0 3px 3px;
         // left: $resume-tab-left;
@@ -91,7 +129,8 @@
 
         &--about{
             left: calcTabLeft($resume-index-about) * 1rem;
-            background-color: $color-tan-light;
+            // background-color: $color-tan-light;
+            background: linear-gradient(to right, $color-tan-light,$color-tan-light-2);
             z-index: 50;
             transform: translateY(calcTransY(1.6) * 1rem);
             @include create-clip-path($resume-index-about);
@@ -99,7 +138,8 @@
         }
         &--profile{
             left: calcTabLeft($resume-index-profile) * 1rem;
-            background-color: $color-tan-dark;
+            // background-color: $color-tan-dark;
+            background: linear-gradient(to right, $color-tan-dark,$color-tan-dark-2);
             z-index: 40;
             transform: translateY(calcTransY(1.7) * 1rem);
             @include create-clip-path($resume-index-profile);
@@ -107,7 +147,8 @@
         }
         &--education{
             left: calcTabLeft($resume-index-education) * 1rem;
-            background-color: $color-red-light;
+            // background-color: $color-red-light;
+            background: linear-gradient(to right, $color-red-light,$color-red-light-2);
             z-index: 30;
             transform: translateY(calcTransY(1.8) * 1rem);
             @include create-clip-path($resume-index-education);
@@ -115,7 +156,9 @@
         }
         &--skills{
             left: calcTabLeft($resume-index-skills) * 1rem;
-            background-color: $color-blue-light;
+            // background-color: $color-blue-light;
+            background: linear-gradient(to right, $color-blue-green,$color-blue-light);
+
             z-index: 20;
             transform: translateY(calcTransY(1.9) * 1rem);
             @include create-clip-path($resume-index-skills);
@@ -123,7 +166,9 @@
         }
         &--experience{
             left: calcTabLeft($resume-index-experience) * 1rem;
-            background-color: $color-blue-dark;
+            // background-color: $color-blue-dark;
+            background: linear-gradient(to right, $color-blue-dark,$color-purple);
+
             z-index: 10;
             transform: translateY(calcTransY(2) * 1rem);
             @include create-clip-path($resume-index-experience);
@@ -131,7 +176,9 @@
         }
         &--projects{
             left: calcTabLeft($resume-index-projects) * 1rem;
-            background-color: $color-green;
+            // background-color: $color-green;
+            background: linear-gradient(to right, $color-green-moss,$color-green);
+
             z-index: 9;
             transform: translateY(calcTransY(2) * 1rem);
             @include create-clip-path($resume-index-projects);
@@ -255,7 +302,7 @@
             left: 0;
             margin: 4rem 1.5rem;
             padding: 1rem;
-            height: 85%;
+            height: 100%;
             width: 95%;
             transition: all 1s ease-out;
             box-shadow: 3px 3px 3px rgba($color-black, 0.4);
@@ -265,6 +312,7 @@
                 font-size: $font-file-heading;
             }
             &__content{
+                overflow-y:auto;
                 &__p{
                     font-size: $font-file-content;
                     line-height: 1.8rem;
