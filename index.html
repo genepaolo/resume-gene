@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="img/linea_arrows_1.0/_ICONFONT/icon-font.css">
     <link rel="stylesheet" href="css/style.css" >
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@200;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;400;700&display=swap" rel="stylesheet">
         <title>Gene's Resume</title>
 </head>
 <body>
-    <label class="switch" for="dark-toggle">
+   
         <input class="switch__checkbox"type="checkbox" id="dark-toggle">
-        <span class="switch__slider slider round"></span>
+        <label class="switch" for="dark-toggle">
+            <span class="switch__slider slider round"></span>
+        </label>
         <div class="body">
             <header class="header">
                 <h1 class="header__title">Gene Flores' Resume</h1>
@@ -54,7 +57,7 @@
                                 About
                             </span>
                             <div class="resume__tab__file">
-                                <h2 class="resume__tab__file__heading">
+                                <h2 class="resume__tab__file__heading ">
                                     About
                                 </h2>
                                 <div class="resume__tab__file__content">
@@ -103,7 +106,7 @@
                                     </div>
                                     <div class="resume__tab__file__content__p row">
                                         <p class="col-1-of-4 font-bold">Details: </p>
-                                        <p class="col-3-of-4">
+                                        <p class="col-3-of-4 font-shrink">
                                             I am a recent graduate of USC with a degree in Computer Science. I recently received my certification for AWS Certified Cloud Practioner in March 2022. I am currently seeking a career in web/software development. 
                                         </p>
                                     </div>
@@ -144,7 +147,7 @@
                                         <p class="col-2-of-4 font-bold">
                                             Related Coursework
                                         </p>
-                                        <p class="col-2-of-4 font-shrink">
+                                        <p class="col-2-of-4 font-shrink-more">
                                             Differential Equations and Matrix Algebra, Data Structures, Discrete Mathematics, Introduction to Algorithms and the Theory of Computing, Operating Systems, Mobile Application Programming, Full Stack Development, Software Engineering                                        </p>
                                     </div>
                                 </div>
@@ -153,15 +156,22 @@
                     </div>
                     <!-- <div class="resume__shadow--anim"></div> -->
                     <!--  -->
-                    <input type="checkbox" class="resume__tab__checkbox resume__tab__checkbox--skills-and-interests" id="skills-and-interests-toggle">
-                    <div class="resume__tab resume__tab--skills-and-interests">
-                        <label for="skills-and-interests-toggle" class="resume__tab__button resume__tab__button--skills-and-interests">
-                            <span href="#" class="resume__tab__title resume__tab__title--skills-and-interests">
-                                Skills & interests
+                    <input type="checkbox" class="resume__tab__checkbox resume__tab__checkbox--skills" id="skills-toggle">
+                    <div class="resume__tab resume__tab--skills">
+                        <div class="resume__tab__scroll">
+                            <label for="skills-slide" class="resume__tab__slide resume__tab__slide--skills">
+                                
+                            </label>
+                        </div>
+                        <label for="skills-toggle" class="resume__tab__button resume__tab__button--skills">
+                            <span href="#" class="resume__tab__title resume__tab__title--skills">
+                                Skills
                             </span>
-                            <div class="resume__tab__file resume__tab__file__extend">
+                            <input type="checkbox" class="resume__tab__checkbox--slider resume__tab__checkbox--slider--skills" id="skills-slide">
+                            <i class="slider__icon icon-arrows-up"></i>
+                            <div class="resume__tab__file resume__tab__file--1">
                                 <h2 class="resume__tab__file__heading">
-                                    Technical Skills
+                                    Technical Skills 
                                 </h2>
                                 <div class="resume__tab__file__content">
                                     <div class="resume__tab__file__content__p row">
@@ -182,6 +192,21 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="resume__tab__file resume__tab__file--2">
+                                <h2 class="resume__tab__file__heading">
+                                    Skills Cont.
+                                </h2>
+                                <div class="resume__tab__file__content">
+                                    <div class="resume__tab__file__content__p row">
+                                        <p class="col-1-of-4 font-bold">Certifications: </p>
+                                        <p class="col-3-of-4">AWS Cloud Practioners Cert. - March 2022-2027</p>
+                                    </div>
+                                    <div class="resume__tab__file__content__p row">
+                                        <p class="col-1-of-4 font-bold">Interests: </p>
+                                        <p class="col-3-of-4">I like to draw on my freetime. I am not good at it.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </label>
                     </div>
                     <!-- <div class="resume__shadow--anim"></div> -->
@@ -199,6 +224,7 @@
                                 Experience
                             </span>
                             <input type="checkbox" class="resume__tab__checkbox--slider resume__tab__checkbox--slider--experience" id="experience-slide">
+                            <i class="slider__icon icon-arrows-up"></i>
                             <div class="resume__tab__file resume__tab__file--1">
                                 <h2 class="resume__tab__file__heading">
                                     Professional
@@ -227,18 +253,25 @@
                                 </h2>
                                 <div class="resume__tab__file__content ">
                                     <div class="resume__tab__file__content__p row ">
-                                        <p class="col-2-of-4 font-bold font-shrink">Undergraduate Teacher Assistant</p>
-                                        <p class="col-1-of-4 font-shrink">Syracuse University</p>
-                                        <p class="col-1-of-4 font-shrink">Aug 2018-Dec 2018</p>
+                                        <p class="col-2-of-4 font-bold font-shrink">Developer</p>
+                                        <p class="col-1-of-4 font-shrink">Weaverry</p>
+                                        <p class="col-1-of-4 font-shrink">December 2020-Present</p>
                                     </div>
                                     <div class="resume__tab__file__content__p row">
-                                        <p class="col-1-of-4 font-shrink">Syracuse, NY</p>
+                                        <p class="col-1-of-4 font-shrink">Fullerton, CA</p>
                                     </div>
                                     <div class="resume__tab__file__content__p row">
                                         <ul class="font-shrink">
-                                            <li>Facilitated students with questions or concerns for the Introduction to Computer Science course about Python as well as their labs and homework.</li>
-                                            <li>Created the programming assignments aimed to cover Python topics lectured by Dr. Marcy each week.</li>
-                                            <li>Assisted Dr. Marcy and the other TA’s in grading the students assignments fairly and accurately.</li>
+                                            <li>Contacted clients to visualize professional websites for their companies and build them using React Native.
+                                            </li>
+                                            <li>
+                                                Constructed brochure designs for the client’s company for advertisement and distribution.
+                                            </li>
+                                            <li>
+                                                Deployed and continuously managed the client’s website through Amazon Web Services.
+                                                <p><a href="https://www.cordialmd.com">https://www.cordialmd.com</a></p>
+                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -249,12 +282,9 @@
                     <input type="checkbox" class="resume__tab__checkbox resume__tab__checkbox--projects" id="projects-toggle">
                     <div class="resume__tab resume__tab--projects">
                         <div class="resume__tab__scroll">
-                            <input type="radio" id="html" name="fav_language" value="HTML">
-                            <label for="html">HTML</label><br>
-                            <input type="radio" id="css" name="fav_language" value="CSS">
-                            <label for="css">CSS</label><br>
-                            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-                            <label for="javascript">JavaScript</label>
+                            <label for="projects-slide" class="resume__tab__slide resume__tab__slide--projects">
+                                
+                            </label>
                         </div>
 
                         <label for="projects-toggle" class="resume__tab__button resume__tab__button--projects">
@@ -262,50 +292,55 @@
                                 Projects
                             </span>
                             <input type="checkbox" class="resume__tab__checkbox--slider resume__tab__checkbox--slider--projects" id="projects-slide">
+                            <i class="slider__icon icon-arrows-up"></i>
                             <div class="resume__tab__file resume__tab__file--1">
                                 <h2 class="resume__tab__file__heading">
                                     Projects
                                 </h2>
                                 <div class="resume__tab__file__content ">
                                     <div class="resume__tab__file__content__p row ">
-                                        <p class="col-2-of-4 font-bold font-shrink">Undergraduate Teacher Assistant</p>
-                                        <p class="col-1-of-4 font-shrink">Syracuse University</p>
-                                        <p class="col-1-of-4 font-shrink">Aug 2018-Dec 2018</p>
+                                        <p class="col-1-of-4 font-bold font-shrink">USC</p>
+                                        <p class="col-2-of-4 font-shrink">Posty Website Project	</p>
+                                        <p class="col-1-of-4 font-shrink">Aug 2021-Dec 2021</p>
                                     </div>
                                     <div class="resume__tab__file__content__p row">
-                                        <p class="col-1-of-4 font-shrink">Syracuse, NY</p>
+                                        <ul class="font-shrink-more">
+                                            <li>Lead the front-end team in both designing the UI UX layout and OOP Interaction Models.</li>
+                                            <li>Collaborated with the back-end team in connecting the Google APi, Java SDK back-end, and MySQL database to our website.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="resume__tab__file__content__p row ">
+                                        <p class="col-1-of-4 font-bold font-shrink">USC</p>
+                                        <p class="col-2-of-4 font-shrink">Capstone Project:Square Wheels</p>
+                                        <p class="col-1-of-4 font-shrink">Aug 2021-Dec 2021</p>
                                     </div>
                                     <div class="resume__tab__file__content__p row">
-                                        <ul class="font-shrink">
-                                            <li>Facilitated students with questions or concerns for the Introduction to Computer Science course about Python as well as their labs and homework.</li>
-                                            <li>Created the programming assignments aimed to cover Python topics lectured by Dr. Marcy each week.</li>
-                                            <li>Assisted Dr. Marcy and the other TA’s in grading the students assignments fairly and accurately.</li>
+                                        <ul class="font-shrink-more">
+                                            <li>Headed a team to help develop a multiplayer browser game hosted on a web application as requested by our stakeholder, Scott Zimmerman of Square Wheels.</li>
+                                            <li >Designed a dynamic and multi-browser compatible game with HTML, CSS, and Javascript (React) with a NodeJS/Express backend connected to MongoDB. </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="resume__tab__file resume__tab__file--2">
                                 <h2 class="resume__tab__file__heading">
-                                    Professional cont.
+                                    Projects Cont
                                 </h2>
                                 <div class="resume__tab__file__content ">
                                     <div class="resume__tab__file__content__p row ">
-                                        <p class="col-2-of-4 font-bold font-shrink">Undergraduate Teacher Assistant</p>
-                                        <p class="col-1-of-4 font-shrink">Syracuse University</p>
-                                        <p class="col-1-of-4 font-shrink">Aug 2018-Dec 2018</p>
-                                    </div>
-                                    <div class="resume__tab__file__content__p row">
-                                        <p class="col-1-of-4 font-shrink">Syracuse, NY</p>
+                                        <p class="col-2-of-4 font-bold font-shrink">Personal Project</p>
+                                        <p class="col-1-of-4 font-shrink">Interactive Resume</p>
+                                        <p class="col-1-of-4 font-shrink">March 2022</p>
                                     </div>
                                     <div class="resume__tab__file__content__p row">
                                         <ul class="font-shrink">
-                                            <li>Facilitated students with questions or concerns for the Introduction to Computer Science course about Python as well as their labs and homework.</li>
-                                            <li>Created the programming assignments aimed to cover Python topics lectured by Dr. Marcy each week.</li>
-                                            <li>Assisted Dr. Marcy and the other TA’s in grading the students assignments fairly and accurately.</li>
+                                            <li>SASS-Powered Resume: Built an interactive website showcasing my resume using only HTML, CSS, and SASS following the BEM and 7-1 Architecture.</li>
+                                            <li><a href="/">Link</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
+                            
                         </label>
                     </div>
                     <div class="resume__shadow--anim"></div>
@@ -313,7 +348,6 @@
                 </div>
             </section>
             <footer class="footer"></footer>
-    </label>
     
     
     </div>

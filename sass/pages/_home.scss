@@ -7,7 +7,6 @@
     width: 100%;
     margin: 0 auto;
     overflow: hidden;
-    color: $color-black;
     z-index: 3;
 
     &__tab__checkbox:checked ~ &__shadow--anim{
@@ -16,11 +15,11 @@
     &__shadow--anim{
         transition: all 0.5s ease-out;
         box-shadow: 7.2rem 1rem 1rem rgba($color-black, 0.4);
-        width: 100%;
+        width: 85%;
         max-width: 55rem;
         position: absolute;
         height: calc(#{$resume-page-height} - 3.5vh);
-        bottom: 3.5rem;
+        bottom: 3rem;
         display: inline-block;
         z-index: 2;
         
@@ -82,6 +81,7 @@
     }
 
     &__tab{
+        cursor: pointer;
         border-radius: 0 0 3px 3px;
         // left: $resume-tab-left;
         width: 90%;
@@ -113,12 +113,12 @@
             @include create-clip-path($resume-index-education);
             // clip-path: polygon(40% 0, 60% 0, 60% $resume-tab-depth, 100% $resume-tab-depth, 100% 100%, 0 100%, 0 $resume-tab-depth, 40% $resume-tab-depth);
         }
-        &--skills-and-interests{
-            left: calcTabLeft($resume-index-skills-and-interests) * 1rem;
+        &--skills{
+            left: calcTabLeft($resume-index-skills) * 1rem;
             background-color: $color-blue-light;
             z-index: 20;
             transform: translateY(calcTransY(1.9) * 1rem);
-            @include create-clip-path($resume-index-skills-and-interests);
+            @include create-clip-path($resume-index-skills);
             // clip-path: polygon(60% 0, 80% 0, 80% $resume-tab-depth, 100% $resume-tab-depth, 100% 100%, 0 100%, 0 $resume-tab-depth, 60% $resume-tab-depth);
         }
         &--experience{
@@ -171,8 +171,8 @@
             &--education{
                 @include set-tab-indent($resume-index-education);
             }
-            &--skills-and-interests{
-                @include set-tab-indent($resume-index-skills-and-interests);
+            &--skills{
+                @include set-tab-indent($resume-index-skills);
             }
             &--experience{
                 @include set-tab-indent($resume-index-experience);
@@ -207,12 +207,11 @@
         
         &__scroll{
             position: absolute;
-            top: 0rem;
+            top: 5rem;
             left: 50%;
             transform: translateX(-50%);
             height: 5rem;
             width: 10rem;
-            background-color: orangered;
             z-index: -1;
             opacity: 0;
             transition: all 0.5s ease;
@@ -223,12 +222,25 @@
             opacity: 1;
         }
         // Specific to experience movement
-        &__checkbox--slider--experience:checked + &__file--1{
+        &__checkbox--slider:not(:checked) + .slider__icon{
+            animation: arrow-move-down 1s 1;
+        }
+        &__checkbox--slider:hover + .slider__icon{
+            transform: scale(1.5);
+        }
+        &__checkbox--slider:checked:hover + .slider__icon{
+            transform: scale(1.5) rotate(180deg);
+        }
+        &__checkbox--slider:checked + .slider__icon{
+            transform: rotate(180deg);
+            animation: arrow-move-up 1s 1;
+        }
+        &__checkbox--slider:checked ~ &__file--1{
             transform: translateY(-15rem);
             opacity: 0;
             transition-delay: 0s;
         }
-        &__checkbox--slider--experience:checked ~ &__file--2{
+        &__checkbox--slider:checked ~ &__file--2{
             transition-delay: 0.5s;
             transform: translateY(0);
             opacity: 1;
@@ -236,17 +248,20 @@
         // File contents
 
         &__file{
+            background-color: rgba($color-white, 0.8);
             position: absolute;
             display:inline-block;
             top: 0;
             left: 0;
-            margin: 2rem 1rem;
-            height: 100%;
+            margin: 4rem 1.5rem;
+            padding: 1rem;
+            height: 85%;
+            width: 95%;
             transition: all 1s ease-out;
+            box-shadow: 3px 3px 3px rgba($color-black, 0.4);
             &__heading{
                 text-align: left;
-                padding-top: 3rem;
-                padding-bottom: 1rem;
+                padding-top: 1rem 0;
                 font-size: $font-file-heading;
             }
             &__content{

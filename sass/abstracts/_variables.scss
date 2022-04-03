@@ -3,7 +3,7 @@
 // Color Palettes
 
 $color-black: #2b2d42;
-$color-grey: #8d99ae;
+
 $color-white: #edf2f4;
 
 $color-blue-dark: #0081a7;
@@ -21,11 +21,18 @@ $color-cover-back-2: #dba16b;
 
 $color-green: #2a9d8f;
 
+$color-grey: #8d99ae;
+$color-grey-light-1: #f7f7f7;
+$color-grey-light: #aaaaaa;
+$color-grey-dark: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+
 // Indicies
 $resume-index-about: 0;
 $resume-index-profile: 1;
 $resume-index-education: 2;
-$resume-index-skills-and-interests: 3;
+$resume-index-skills: 3;
 $resume-index-experience: 4;
 $resume-index-projects: 5;
 $resume-tabs-total: 6;
@@ -44,12 +51,12 @@ $resume-transy: 32;
 
 // Animation values
 $anim-hover: 29rem;
-$anim-click: -1rem;
+$anim-click: .5rem;
 $anim-shadow: 29rem;
 // Font sizes
-$font-tab-title: 1.5rem;
+$font-tab-title: 1.3rem;
 $font-settings-text: 1.6rem;
-$font-file-heading: 2.5rem;
+$font-file-heading: 2rem;
 $font-file-content: 1.6rem;
 // grids
 $grid-width: 114rem;

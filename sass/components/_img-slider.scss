@@ -1,0 +1,12 @@
+
+.slider__icon{
+    display: inline-block;
+    font-size: 3rem;
+    position: absolute;
+    top: 5rem;
+    left: 50%;
+    z-index: 999;
+    transform-origin: center;
+    transition: all 0.5s cubic-bezier(1,-0.26,.48,1.23);
+    
+}

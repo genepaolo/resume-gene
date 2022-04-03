@@ -30,3 +30,23 @@ body{
     transition: background-color 0.4s ease;
     z-index: 0;
 }
+
+a{
+    text-decoration: none;
+    color: $color-grey-dark-2;
+    transition: all 0.2 ease;
+}
+
+ul{
+    margin-left: 2rem;
+    list-style: none;
+    li{
+        padding-left: 3rem;
+        margin: 0;
+        background-image: url('../img/linea_arrows_1.0/_SVG/arrows_sign_right.svg');
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 2rem;
+    }
+
+}
