@@ -1,0 +1,15 @@
+@media(max-width: 640px){
+    .resume{
+        &__tab{
+            width:85%;
+            &__checkbox:checked + &{
+                z-index: 500;
+            }
+            &__file{
+                height: 80%;
+                margin: 4rem 1rem;
+            }
+        }
+    }
+
+}

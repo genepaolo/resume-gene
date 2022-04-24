@@ -3,7 +3,6 @@
     display: block;
     max-width: 65rem;
     height: 100%;
-    background-color: inherit;
     width: 100%;
     margin: 0 auto;
     overflow: hidden;
@@ -14,36 +13,28 @@
     }
     &__shadow--anim{
         transition: all 0.5s ease-out;
-        box-shadow: 7rem 1rem 1rem rgba($color-black, 0.4), -3rem -3rem .3rem rgba($color-black, 0.4) inset;
         width: 80%;
         max-width: 55rem;
         position: absolute;
-        height: $resume-page-height - 10vh;
+        height: $resume-page-height;
         display: inline-block;
         z-index: 2;
+        box-shadow: 7rem 1rem 1rem rgba($color-black, 0.4), -3rem 0rem .3rem rgba($color-black, 0.4) inset;
         transform:translateY(calcTransY(-5) * 1rem);
         mix-blend-mode: exclusion;
         left: 5rem;
-        
     }
-
     &__shadow{
         box-shadow: 1rem 1rem 1rem rgba($color-black, 0.4);
         width: 100%;
         max-width: 63rem;
         position: absolute;
         height: $resume-page-height;
-        // bottom: 11rem;
         left: 50%;
         background-color: transparent;
         display: inline-block;
-        z-index: 2;
         transform: translateX(-51%) translateY(calcTransY(.5) * 1rem);
-        
     }
-    
-
-
     &__cover{
         
         width: 100%;
@@ -97,8 +88,6 @@
                 display: inline-block;
                 position: absolute;
                 clip-path: polygon(100% $resume-tab-depth, 100% 100%, 0 100%, 0 $resume-tab-depth);
-                // width: calc(#{$resume-cover-height} * #{$resume-border-handler});
-                // height: calc(#{$resume-page-height} * #{$resume-border-handler});
                 max-width: $resume-cover-width;
                 height: $resume-page-height;
                 
@@ -118,71 +107,54 @@
     }
 
     &__tab{
-        overflow-y:auto;
         cursor: pointer;
         border-radius: 0 0 3px 3px;
-        // left: $resume-tab-left;
         width: 90%;
         position: absolute;
         height: $resume-page-height;
-        // box-shadow: 10px 10px 10px rgba($color-black, 0.4);
 
         &--about{
             left: calcTabLeft($resume-index-about) * 1rem;
-            // background-color: $color-tan-light;
             background: linear-gradient(to right, $color-tan-light,$color-tan-light-2);
             z-index: 50;
             transform: translateY(calcTransY(1.6) * 1rem);
             @include create-clip-path($resume-index-about);
-            // clip-path: polygon(20% $resume-tab-depth, 100% $resume-tab-depth, 100% 100%, 0 100%, 0 0, 20% 0);
         }
         &--profile{
             left: calcTabLeft($resume-index-profile) * 1rem;
-            // background-color: $color-tan-dark;
             background: linear-gradient(to right, $color-tan-dark,$color-tan-dark-2);
             z-index: 40;
             transform: translateY(calcTransY(1.7) * 1rem);
             @include create-clip-path($resume-index-profile);
-            // clip-path: polygon(20% 0, 40% 0, 40% $resume-tab-depth, 100% $resume-tab-depth, 100% 100%, 0 100%, 0 $resume-tab-depth, 20% $resume-tab-depth);
         }
         &--education{
             left: calcTabLeft($resume-index-education) * 1rem;
-            // background-color: $color-red-light;
             background: linear-gradient(to right, $color-red-light,$color-red-light-2);
             z-index: 30;
             transform: translateY(calcTransY(1.8) * 1rem);
             @include create-clip-path($resume-index-education);
-            // clip-path: polygon(40% 0, 60% 0, 60% $resume-tab-depth, 100% $resume-tab-depth, 100% 100%, 0 100%, 0 $resume-tab-depth, 40% $resume-tab-depth);
         }
         &--skills{
             left: calcTabLeft($resume-index-skills) * 1rem;
-            // background-color: $color-blue-light;
             background: linear-gradient(to right, $color-blue-green,$color-blue-light);
 
             z-index: 20;
             transform: translateY(calcTransY(1.9) * 1rem);
             @include create-clip-path($resume-index-skills);
-            // clip-path: polygon(60% 0, 80% 0, 80% $resume-tab-depth, 100% $resume-tab-depth, 100% 100%, 0 100%, 0 $resume-tab-depth, 60% $resume-tab-depth);
         }
         &--experience{
             left: calcTabLeft($resume-index-experience) * 1rem;
-            // background-color: $color-blue-dark;
             background: linear-gradient(to right, $color-blue-dark,$color-purple);
-
             z-index: 10;
             transform: translateY(calcTransY(2) * 1rem);
             @include create-clip-path($resume-index-experience);
-
         }
         &--projects{
             left: calcTabLeft($resume-index-projects) * 1rem;
-            // background-color: $color-green;
             background: linear-gradient(to right, $color-green-moss,$color-green);
-
             z-index: 9;
             transform: translateY(calcTransY(2) * 1rem);
             @include create-clip-path($resume-index-projects);
-
         }
         transition: all 0.5s ease-out;
         &:hover{
@@ -195,9 +167,6 @@
         }
 
         &__title{
-            // text-decoration: none;
-            // color: $color-black;
-            // font-size: $font-tab-title;
             cursor: pointer;
             font-weight: 700;
             text-transform: uppercase;
@@ -227,9 +196,7 @@
             &--projects{
                 @include set-tab-indent($resume-index-projects);
             }
-            
         }
-
         //  checkbox/Buttons
         &__checkbox{
             display: none;
@@ -243,8 +210,8 @@
         }
         &__checkbox:checked + &{
             transform: translateY(-$anim-click);
-            
         }
+
         &__slide{
             width: 100%;
             height: 100%;
@@ -306,6 +273,7 @@
             width: 95%;
             transition: all 1s ease-out;
             box-shadow: 3px 3px 3px rgba($color-black, 0.4);
+            overflow-y:auto;
             &__heading{
                 text-align: left;
                 padding-top: 1rem 0;

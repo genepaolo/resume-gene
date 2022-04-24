@@ -1,0 +1,51 @@
+@media (max-width: 640px){
+    body{
+        line-height: 1.4;
+    }
+    
+    .header{
+        &__title{
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+    }
+    .resume__tab__file__content__p{
+        font-size: $font-file-content-small;
+    }
+    .resume{
+        
+        &__tab{
+
+            &__file{
+                &__heading{
+                    font-size: $font-file-heading-small;
+                }
+                &__content{
+                    &__p{
+                        font-size: $font-file-content-small;
+                    }
+                }
+            }
+            &__title{
+                font-size: $font-tab-title-small;
+            }
+        }
+    }
+    
+    .font-bold{
+        font-weight:700;
+    }
+    
+    .font-shrink{
+        font-size: 1rem;
+    }
+    
+    .font-shrink-more{
+        font-size: .8rem;
+    }
+    
+    .col-1-of-4{
+        word-break: break-all;
+        hyphens: auto;
+    }
+}

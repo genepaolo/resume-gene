@@ -32,17 +32,14 @@
   padding: 0; }
 
 html {
-  font-size: 62.5%;
-  height: 100%; }
+  font-size: 62.5%; }
 
 body {
   box-sizing: border-box;
-  background-color: inherit;
-  height: 100vh; }
+  background-color: inherit; }
 
 .body {
   width: 100%;
-  display: inline-block;
   background-color: #edf2f4;
   padding: .5rem .5rem;
   height: 100%;
@@ -50,7 +47,8 @@ body {
   top: 0;
   left: 0;
   transition: background-color 0.4s ease;
-  z-index: 0; }
+  z-index: 0;
+  overflow-y: hidden; }
 
 a {
   text-decoration: none;
@@ -111,9 +109,9 @@ body {
 .modal-settings {
   display: none;
   position: absolute;
-  height: 100vh;
+  height: 120vh;
   width: 100%;
-  top: 20vh;
+  top: 10vh;
   left: 0;
   opacity: 0;
   z-index: -1;
@@ -217,6 +215,10 @@ body {
   background-color: #2b2d42;
   color: #edf2f4; }
 
+footer p {
+  text-align: left;
+  padding: 2rem; }
+
 .row {
   max-width: 114rem;
   margin: 0 auto; }
@@ -258,7 +260,7 @@ body {
     display: inline-block;
     height: 3rem;
     width: 3rem;
-    background-color: orangered;
+    font-size: 2rem;
     position: absolute;
     right: 0;
     top: 0;
@@ -278,7 +280,6 @@ body {
   display: block;
   max-width: 65rem;
   height: 100%;
-  background-color: inherit;
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
@@ -287,13 +288,13 @@ body {
     transform: translateY(5rem); }
   .resume__shadow--anim {
     transition: all 0.5s ease-out;
-    box-shadow: 7rem 1rem 1rem rgba(43, 45, 66, 0.4), -3rem -3rem 0.3rem rgba(43, 45, 66, 0.4) inset;
     width: 80%;
     max-width: 55rem;
     position: absolute;
-    height: 30vh;
+    height: 45rem;
     display: inline-block;
     z-index: 2;
+    box-shadow: 7rem 1rem 1rem rgba(43, 45, 66, 0.4), -3rem 0rem 0.3rem rgba(43, 45, 66, 0.4) inset;
     transform: translateY(37rem);
     mix-blend-mode: exclusion;
     left: 5rem; }
@@ -302,16 +303,15 @@ body {
     width: 100%;
     max-width: 63rem;
     position: absolute;
-    height: 40vh;
+    height: 45rem;
     left: 50%;
     background-color: transparent;
     display: inline-block;
-    z-index: 2;
     transform: translateX(-51%) translateY(31.5rem); }
   .resume__cover {
     width: 100%;
     max-width: 63rem;
-    height: 40vh;
+    height: 45rem;
     position: absolute;
     background-color: #fcad78f3; }
     .resume__cover__title {
@@ -357,22 +357,21 @@ body {
         position: absolute;
         clip-path: polygon(100% 8%, 100% 100%, 0 100%, 0 8%);
         max-width: 63rem;
-        height: 40vh; }
+        height: 45rem; }
     .resume__cover--back {
       clip-path: polygon(100% 8%, 100% 90%, 99.5% 94%, 99% 95%, 98% 98%, 97% 100%, 0 100%, 0 8%);
       background-color: #c08c5c;
       z-index: 7;
       right: 0rem;
       transform: translateY(31.2rem);
-      height: calc(40vh + 0.5rem);
+      height: calc(45rem + 0.5rem);
       box-shadow: 10px 2px 2px rgba(43, 45, 66, 0.4); }
   .resume__tab {
-    overflow-y: auto;
     cursor: pointer;
     border-radius: 0 0 3px 3px;
     width: 90%;
     position: absolute;
-    height: 40vh;
+    height: 45rem;
     transition: all 0.5s ease-out; }
     .resume__tab--about {
       left: 1rem;
@@ -496,7 +495,8 @@ body {
       height: 100%;
       width: 95%;
       transition: all 1s ease-out;
-      box-shadow: 3px 3px 3px rgba(43, 45, 66, 0.4); }
+      box-shadow: 3px 3px 3px rgba(43, 45, 66, 0.4);
+      overflow-y: auto; }
       .resume__tab__file__heading {
         text-align: left;
         padding-top: 1rem 0;
@@ -513,3 +513,36 @@ body {
       .resume__tab__file--2 {
         opacity: 0;
         transform: translateY(15rem); }
+
+@media (max-width: 640px) {
+  body {
+    line-height: 1.4; }
+  .header__title {
+    font-size: 1.5rem;
+    font-weight: 700; }
+  .resume__tab__file__content__p {
+    font-size: 1rem; }
+  .resume__tab__file__heading {
+    font-size: 1.2rem; }
+  .resume__tab__file__content__p {
+    font-size: 1rem; }
+  .resume__tab__title {
+    font-size: 1rem; }
+  .font-bold {
+    font-weight: 700; }
+  .font-shrink {
+    font-size: 1rem; }
+  .font-shrink-more {
+    font-size: .8rem; }
+  .col-1-of-4 {
+    word-break: break-all;
+    hyphens: auto; } }
+
+@media (max-width: 640px) {
+  .resume__tab {
+    width: 85%; }
+    .resume__tab__checkbox:checked + .resume__tab {
+      z-index: 500; }
+    .resume__tab__file {
+      height: 80%;
+      margin: 4rem 1rem; } }

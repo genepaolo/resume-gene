@@ -49,7 +49,8 @@ $resume-tabs-total: 6;
 
 // Resume components
 
-$resume-page-height: 40vh;
+// $resume-page-height: 40vh;
+$resume-page-height: 45rem;
 $resume-cover-width: 63rem;
 // how much we want to scale our ::before pseudo elems to make borders
 $resume-border-handler: 0.99;
@@ -68,6 +69,11 @@ $font-tab-title: 1.3rem;
 $font-settings-text: 1.6rem;
 $font-file-heading: 2rem;
 $font-file-content: 1.6rem;
+
+$font-tab-title-small: 1rem;
+$font-settings-text-small: 1.2rem;
+$font-file-heading-small: 1.2rem;
+$font-file-content-small: 1rem;
 // grids
 $grid-width: 114rem;
 $gutter-vertical: .5rem;
