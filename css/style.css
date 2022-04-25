@@ -64,7 +64,7 @@ ul {
   ul li {
     padding-left: 3rem;
     margin: 0;
-    background-image: url("../img/linea_arrows_1.0/_SVG/arrows_sign_right.svg");
+    background-image: url("./linea_arrows_1.0/_SVG/arrows_sign_right.svg");
     background-repeat: no-repeat;
     background-position: left center;
     background-size: 2rem; }
