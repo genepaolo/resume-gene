@@ -35,6 +35,10 @@ a{
     transition: all 0.2 ease;
 }
 
+a:hover{
+    color: $color-green;
+}
+
 ul{
     margin-left: 2rem;
     list-style: none;

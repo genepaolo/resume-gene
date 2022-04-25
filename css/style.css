@@ -55,6 +55,9 @@ a {
   color: #999;
   transition: all 0.2 ease; }
 
+a:hover {
+  color: #34bb83; }
+
 ul {
   margin-left: 2rem;
   list-style: none; }
