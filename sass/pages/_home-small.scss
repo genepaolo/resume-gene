@@ -3,6 +3,8 @@
         &__tab{
             width:85%;
             &__checkbox:checked + &{
+                animation-name: pushZ;
+                animation-duration: 1s;
                 z-index: 500;
             }
             &__file{
@@ -12,4 +14,16 @@
         }
     }
 
+}
+
+@keyframes pushZ{
+    0%{
+        z-index: 5;
+    }
+    80%{
+        z-index: 5;
+    }
+    100%{
+        z-index: 500;
+    }
 }

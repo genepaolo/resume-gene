@@ -311,16 +311,16 @@ footer p {
     height: 45rem;
     display: inline-block;
     z-index: 2;
-    box-shadow: 7rem 1rem 1rem rgba(43, 45, 66, 0.4), -3rem 0rem 0.3rem rgba(43, 45, 66, 0.4) inset;
+    box-shadow: 11rem 1rem 1rem rgba(43, 45, 66, 0.4);
     transform: translateY(37rem);
     mix-blend-mode: exclusion;
-    left: 5rem; }
+    left: 1rem; }
   .resume__shadow {
     box-shadow: 1rem 1rem 1rem rgba(43, 45, 66, 0.4);
     width: 100%;
     max-width: 63rem;
     position: absolute;
-    height: 45rem;
+    height: calc($resume-page-height - 5rem);
     left: 50%;
     background-color: transparent;
     display: inline-block;
@@ -559,7 +559,17 @@ footer p {
   .resume__tab {
     width: 85%; }
     .resume__tab__checkbox:checked + .resume__tab {
+      animation-name: pushZ;
+      animation-duration: 1s;
       z-index: 500; }
     .resume__tab__file {
       height: 80%;
       margin: 4rem 1rem; } }
+
+@keyframes pushZ {
+  0% {
+    z-index: 5; }
+  80% {
+    z-index: 5; }
+  100% {
+    z-index: 500; } }
