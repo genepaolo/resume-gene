@@ -262,7 +262,7 @@ footer p {
 
 .header {
   border-bottom: 2px solid #8d99ae;
-  height: 4vh;
+  height: 4rem;
   width: 100%;
   position: relative;
   margin-bottom: 5rem;
@@ -308,7 +308,7 @@ footer p {
     width: 80%;
     max-width: 55rem;
     position: absolute;
-    height: 45rem;
+    height: 30rem;
     display: inline-block;
     z-index: 2;
     box-shadow: 11rem 1rem 1rem rgba(43, 45, 66, 0.4);

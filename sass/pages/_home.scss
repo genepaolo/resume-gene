@@ -16,13 +16,12 @@
         width: 80%;
         max-width: 55rem;
         position: absolute;
-        height: $resume-page-height;
+        height: $anim-height;
         display: inline-block;
         z-index: 2;
         box-shadow: 11rem 1rem 1rem rgba($color-black, 0.4);
         transform:translateY(calcTransY(-5) * 1rem);
         mix-blend-mode: exclusion;
-        // left: 5rem;
         left: calcTabLeft($resume-index-about) * 1rem;
     }
     &__shadow{
